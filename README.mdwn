@@ -1,0 +1,62 @@
+# IkiWiki doclet for LuaDoc
+
+This is a doclet for [LuaDoc](http://luadoc.luaforge.net) that writes
+wiki pages for [IkiWiki](http://ikiwiki.info) wiki compiler software
+from Lua source files documented with [LuaDoc markup](http://luadoc.luaforge.net/manual.html#howto).
+Wiki pages are written as [Markdown](http://daringfireball.net/projects/markdown/)
+files.
+
+# Downloading
+
+IkiWiki doclet for LuaDoc home page is at
+<http://solitudo.net/software/lua/luadoc-ikiwiki/> and it can be downloaded
+from the public Git repository at `git://scm.solitudo.net/luadoc-ikiwiki.git`.
+Gitweb interface is available at
+<http://scm.solitudo.net/gitweb/public/luadoc-ikiwiki.git>.
+
+Remember to download the submodules after cloning `luadoc-ikiwiki.git`.
+
+1. $ `git submodule init`
+1. $ `git submodule update`
+
+# Installation
+
+Install the `src/luadoc` under some of the directories included in the default
+`LUA_PATH` for your Lua distribution, or install under desired location and set
+`LUA_PATH` accordingly. More info about `LUA_PATH` at
+<http://www.lua.org/pil/8.1.html>.
+
+# Usage
+
+1. Use `--doclet luadoc.doclet.ikiwiki` command line argument when running `luadoc(1)`.
+1. Copy the resulting directory tree with `.mdwn` files under your IkiWiki
+`srcdir` so that the API documentation can be published as part of your wiki.
+
+# Automation
+
+If you want to automate creation of the API documentation using
+[GNU Make](http://www.gnu.org/software/automake/) on demand,
+see the makefile `luadoc.mk` for more information how to do that.
+
+# API Documentation
+
+API documentation for `luadoc-ikiwiki` is available under the api/ directory of
+the distribution.
+
+# Copyright and licensing
+
+Copyright: © 2010 Tuomas Jormola <tj@solitudo.net> <http://solitudo.net>
+
+Licensed under the terms of the [GNU General Public License Version 2.0](http://www.gnu.org/licenses/gpl-2.0.html).
+License terms are included in the file `COPYING`.
+
+This doclet is based on the [HTML doclet](http://luadoc.luaforge.net/api/modules/luadoc.doclet.html.html)
+included in the [LuaDoc distribution](http://luaforge.net/projects/luadoc/files).
+
+LuaDoc codebase was designed and developed by Tomás Guisasola. Version 3.0 was
+refactored by Danilo Tuler and Tomás Guisasola as part of
+the [Kepler Project](http://www.keplerproject.org), which holds its copyright.
+
+LuaDoc credits snippet above was copied from <http://luadoc.luaforge.net/index.html#credits>
+and included here in order for this software to be compatible with
+the [LuaDoc license](http://luadoc.luaforge.net/license.html).
