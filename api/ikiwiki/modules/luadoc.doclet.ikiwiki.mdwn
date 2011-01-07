@@ -1,0 +1,335 @@
+[[!meta title="LuaDoc - luadoc.doclet.ikiwiki"]]
+
+<div id="luadoc" markdown="1">
+
+[[Jump to content|ikiwiki/modules/luadoc.doclet.ikiwiki#luadoc-content"]]
+
+# LuaDoc
+
+
+* [[Index|ikiwiki]]
+
+
+
+# Modules
+
+* **luadoc.doclet.ikiwiki**
+
+
+
+
+# Files
+
+* [[luadoc/doclet/ikiwiki.lua|ikiwiki/files/luadoc/doclet/ikiwiki.lua]]
+
+
+
+
+---
+
+<span id="luadoc-content" />
+
+# Module `luadoc.doclet.ikiwiki`
+
+
+Doclet that generates MarkDown output that can be included in a IkiWiki site. This doclet generates a set of mdwn files based on a group of templates. The main templates are: <ul> <li>index.lp: index of modules and files;</li> <li>file.lp: documentation for a lua file;</li> <li>module.lp: documentation for a lua module;</li> <li>function.lp: documentation for a lua function. This is a sub-template used by the others.</li> </ul>
+
+
+
+**Author:**
+
+* Tuomas Jormola
+
+
+
+
+Copyright: © 2010 Tuomas Jormola <a href="mailto:tj@solitudo.net">tj@solitudo.net</a> <a href="http://solitudo.net">http://solitudo.net</a> Licensed under the terms of the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License Version 2.0</a>.  
+
+
+
+
+
+## Functions summary
+
+| - | - |
+| [[`file_link`|ikiwiki/modules/luadoc.doclet.ikiwiki#luadoc-function-file_link]] `(`*`doc, to`*`)` | Returns the wikilink of a lua(doc) file  |
+| [[`include`|ikiwiki/modules/luadoc.doclet.ikiwiki#luadoc-function-include]] `(`*`template, env`*`)` | Include the result of a lp template into the current stream  |
+| [[`link_to`|ikiwiki/modules/luadoc.doclet.ikiwiki#luadoc-function-link_to]] `(`*`fname, doc, module_doc, file_doc, kind`*`)` | Returns a wikilink to a function or to a table  |
+| [[`module_link`|ikiwiki/modules/luadoc.doclet.ikiwiki#luadoc-function-module_link]] `(`*`doc, modulename`*`)` | Returns the wikilink of a module  |
+| [[`out_file`|ikiwiki/modules/luadoc.doclet.ikiwiki#luadoc-function-out_file]] `(`*`filename`*`)` | Assembly the output mdwn filename for an input file  |
+| [[`out_module`|ikiwiki/modules/luadoc.doclet.ikiwiki#luadoc-function-out_module]] `(`*`modulename`*`)` | Assembly the output mdwn filename for a module  |
+| [[`search`|ikiwiki/modules/luadoc.doclet.ikiwiki#luadoc-function-search]] `(`*`path, name`*`)` | Looks for a file `name` in given path. |
+| [[`start`|ikiwiki/modules/luadoc.doclet.ikiwiki#luadoc-function-start]] `(`*`doc`*`)` | Generate the output  |
+| [[`symbol_link`|ikiwiki/modules/luadoc.doclet.ikiwiki#luadoc-function-symbol_link]] `(`*`symbol, doc, module_doc, file_doc`*`)` | Make a wikilink to a module, function, or table  |
+
+
+
+
+
+
+## Functions
+
+---
+
+<span id="luadoc-function-file_link" />
+
+### file_link (doc, to)
+
+
+Returns the wikilink of a lua(doc) file
+
+
+
+**Parameters**
+
+* `doc`: Documentation table
+* `to`: Name of the file to be processed, may be a .lua file or a .luadoc file beginning of path
+
+
+
+
+
+
+**Return value:**
+
+Wikilink string for the file
+
+
+
+
+
+---
+
+<span id="luadoc-function-include" />
+
+### include (template, env)
+
+
+Include the result of a lp template into the current stream
+
+
+
+**Parameters**
+
+* `template`: Template name
+* `env`: Environment for the template
+
+
+
+
+
+
+**Return value:**
+
+String resulted from the template expansion
+
+
+
+
+
+---
+
+<span id="luadoc-function-link_to" />
+
+### link_to (fname, doc, module_doc, file_doc, kind)
+
+
+Returns a wikilink to a function or to a table
+
+
+
+**Parameters**
+
+* `fname`: Name of the function or table to link to
+* `doc`: Documentation table
+* `module_doc`: Modules table
+* `file_doc`: Files table
+* `kind`: String specifying the kind of element to link ("functions" or "tables"). Default is "functions".
+
+
+
+
+
+
+**Return value:**
+
+Wikilink string for the function or table
+
+
+
+
+
+---
+
+<span id="luadoc-function-module_link" />
+
+### module_link (doc, modulename)
+
+
+Returns the wikilink of a module
+
+
+
+**Parameters**
+
+* `doc`: Documentation table
+* `modulename`: Name of the module to be processed
+
+
+
+
+
+
+**Return value:**
+
+Wikilink string for the module
+
+
+
+
+
+---
+
+<span id="luadoc-function-out_file" />
+
+### out_file (filename)
+
+
+Assembly the output mdwn filename for an input file
+
+
+
+**Parameters**
+
+* `filename`: input file
+
+
+
+
+
+
+**Return value:**
+
+mdwn file name matching the input file
+
+
+
+
+
+---
+
+<span id="luadoc-function-out_module" />
+
+### out_module (modulename)
+
+
+Assembly the output mdwn filename for a module
+
+
+
+**Parameters**
+
+* `modulename`: module for which to get the filename
+
+
+
+
+
+
+**Return value:**
+
+mdwn file name matching the module
+
+
+
+
+
+---
+
+<span id="luadoc-function-search" />
+
+### search (path, name)
+
+
+Looks for a file `name` in given path. Removed from compat-5.1
+
+
+
+**Parameters**
+
+* `path`: String with the path
+* `name`: String with the name to look for
+
+
+
+
+
+
+**Return value:**
+
+String with the complete path of the file found or nil in case the file is not found.
+
+
+
+
+
+---
+
+<span id="luadoc-function-start" />
+
+### start (doc)
+
+
+Generate the output
+
+
+
+**Parameters**
+
+* `doc`: Table with the structured documentation.
+
+
+
+
+
+
+
+
+
+
+---
+
+<span id="luadoc-function-symbol_link" />
+
+### symbol_link (symbol, doc, module_doc, file_doc)
+
+
+Make a wikilink to a module, function, or table
+
+
+
+**Parameters**
+
+* `symbol`: Name of the module, function or table
+* `doc`: Documentation table
+* `module_doc`: Modules table
+* `file_doc`: Files table
+
+
+
+
+
+
+**Return value:**
+
+Wikilink string for the module, function, or table
+
+
+
+
+
+
+
+
+
+</div>

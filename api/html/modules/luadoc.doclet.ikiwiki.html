@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li><strong>luadoc.doclet.ikiwiki</strong></li>
+	
+</ul>
+
+
+
+<!-- File list -->
+
+<h1>Files</h1>
+<ul>
+
+	<li>
+		<a href="../files/luadoc/doclet/ikiwiki.html">luadoc/doclet/ikiwiki.lua</a>
+	</li>
+
+</ul>
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>luadoc.doclet.ikiwiki</code></h1>
+
+<p>Doclet that generates MarkDown output that can be included in a IkiWiki site. This doclet generates a set of mdwn files based on a group of templates. The main templates are: <ul> <li>index.lp: index of modules and files;</li> <li>file.lp: documentation for a lua file;</li> <li>module.lp: documentation for a lua module;</li> <li>function.lp: documentation for a lua function. This is a sub-template used by the others.</li> </ul></p>
+
+<p><b>Author:</b>
+<table class="authors_list">
+
+	<tr><td class="name">Tuomas Jormola</td></tr>
+
+</table>
+</p>
+
+
+<p>Copyright&copy; © 2010 Tuomas Jormola <a href="mailto:tj@solitudo.net">tj@solitudo.net</a> <a href="http://solitudo.net">http://solitudo.net</a> Licensed under the terms of the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License Version 2.0</a>.  </p>
+
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#file_link">file_link</a>&nbsp;(doc, to)</td>
+	<td class="summary">Returns the wikilink of a lua(doc) file </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#include">include</a>&nbsp;(template, env)</td>
+	<td class="summary">Include the result of a lp template into the current stream </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#link_to">link_to</a>&nbsp;(fname, doc, module_doc, file_doc, kind)</td>
+	<td class="summary">Returns a wikilink to a function or to a table </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#module_link">module_link</a>&nbsp;(doc, modulename)</td>
+	<td class="summary">Returns the wikilink of a module </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#out_file">out_file</a>&nbsp;(filename)</td>
+	<td class="summary">Assembly the output mdwn filename for an input file </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#out_module">out_module</a>&nbsp;(modulename)</td>
+	<td class="summary">Assembly the output mdwn filename for a module </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#search">search</a>&nbsp;(path, name)</td>
+	<td class="summary">Looks for a file `name` in given path.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#start">start</a>&nbsp;(doc)</td>
+	<td class="summary">Generate the output </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#symbol_link">symbol_link</a>&nbsp;(symbol, doc, module_doc, file_doc)</td>
+	<td class="summary">Make a wikilink to a module, function, or table </td>
+	</tr>
+
+</table>
+
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="file_link"></a><strong>file_link</strong>&nbsp;(doc, to)</dt>
+<dd>
+Returns the wikilink of a lua(doc) file
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  doc: Documentation table
+	</li>
+	
+	<li>
+	  to: Name of the file to be processed, may be a .lua file or a .luadoc file beginning of path
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+Wikilink string for the file
+
+
+
+</dd>
+
+
+
+
+<dt><a name="include"></a><strong>include</strong>&nbsp;(template, env)</dt>
+<dd>
+Include the result of a lp template into the current stream
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  template: Template name
+	</li>
+	
+	<li>
+	  env: Environment for the template
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+String resulted from the template expansion
+
+
+
+</dd>
+
+
+
+
+<dt><a name="link_to"></a><strong>link_to</strong>&nbsp;(fname, doc, module_doc, file_doc, kind)</dt>
+<dd>
+Returns a wikilink to a function or to a table
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  fname: Name of the function or table to link to
+	</li>
+	
+	<li>
+	  doc: Documentation table
+	</li>
+	
+	<li>
+	  module_doc: Modules table
+	</li>
+	
+	<li>
+	  file_doc: Files table
+	</li>
+	
+	<li>
+	  kind: String specifying the kind of element to link ("functions" or "tables"). Default is "functions".
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+Wikilink string for the function or table
+
+
+
+</dd>
+
+
+
+
+<dt><a name="module_link"></a><strong>module_link</strong>&nbsp;(doc, modulename)</dt>
+<dd>
+Returns the wikilink of a module
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  doc: Documentation table
+	</li>
+	
+	<li>
+	  modulename: Name of the module to be processed
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+Wikilink string for the module
+
+
+
+</dd>
+
+
+
+
+<dt><a name="out_file"></a><strong>out_file</strong>&nbsp;(filename)</dt>
+<dd>
+Assembly the output mdwn filename for an input file
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  filename: input file
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+mdwn file name matching the input file
+
+
+
+</dd>
+
+
+
+
+<dt><a name="out_module"></a><strong>out_module</strong>&nbsp;(modulename)</dt>
+<dd>
+Assembly the output mdwn filename for a module
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  modulename: module for which to get the filename
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+mdwn file name matching the module
+
+
+
+</dd>
+
+
+
+
+<dt><a name="search"></a><strong>search</strong>&nbsp;(path, name)</dt>
+<dd>
+Looks for a file `name` in given path. Removed from compat-5.1
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  path: String with the path
+	</li>
+	
+	<li>
+	  name: String with the name to look for
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+String with the complete path of the file found or nil in case the file is not found.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="start"></a><strong>start</strong>&nbsp;(doc)</dt>
+<dd>
+Generate the output
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  doc: Table with the structured documentation.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="symbol_link"></a><strong>symbol_link</strong>&nbsp;(symbol, doc, module_doc, file_doc)</dt>
+<dd>
+Make a wikilink to a module, function, or table
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  symbol: Name of the module, function or table
+	</li>
+	
+	<li>
+	  doc: Documentation table
+	</li>
+	
+	<li>
+	  module_doc: Modules table
+	</li>
+	
+	<li>
+	  file_doc: Files table
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+Wikilink string for the module, function, or table
+
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

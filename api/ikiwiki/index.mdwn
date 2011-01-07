@@ -1,0 +1,48 @@
+[[!meta title="LuaDoc"]]
+
+<div id="luadoc" markdown="1">
+
+[[Jump to content|ikiwiki#luadoc-content"]]
+
+# LuaDoc
+
+
+* **Index**
+
+
+
+# Modules
+
+* [[luadoc.doclet.ikiwiki|ikiwiki/modules/luadoc.doclet.ikiwiki]]
+
+
+
+
+# Files
+
+* [[luadoc/doclet/ikiwiki.lua|ikiwiki/files/luadoc/doclet/ikiwiki.lua]]
+
+
+
+
+---
+
+<span id="luadoc-content" />
+
+
+## Modules
+
+| - | - |
+| [[luadoc.doclet.ikiwiki|ikiwiki/modules/luadoc.doclet.ikiwiki]] | Doclet that generates MarkDown output that can be included in a IkiWiki site. |
+
+
+
+
+## Files
+
+| - |
+| [[luadoc/doclet/ikiwiki.lua|ikiwiki/files/luadoc/doclet/ikiwiki.lua]] |
+
+
+
+</div>
