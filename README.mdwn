@@ -40,7 +40,7 @@ see the makefile `luadoc.mk` for more information how to do that.
 
 # API Documentation
 
-API documentation for `luadoc-ikiwiki` is available under the api/ directory of
+API documentation for `luadoc-ikiwiki` is available under the `api/` directory of
 the distribution.
 
 # Copyright and licensing
