@@ -8,14 +8,10 @@
 
    IkiWiki doclet for LuaDoc home page is at
    [5]http://solitudo.net/software/lua/luadoc-ikiwiki/ and it can be
-   downloaded from the public Git repository at
+   downloaded by cloning the public Git repository at
    git://scm.solitudo.net/luadoc-ikiwiki.git. Gitweb interface is
    available at
    [6]http://scm.solitudo.net/gitweb/public/luadoc-ikiwiki.git.
-
-   Remember to download the submodules after cloning luadoc-ikiwiki.git.
-    1. $ git submodule init
-    2. $ git submodule update
 
                                   Installation
 
