@@ -10,7 +10,7 @@
 -- sub-template used by the others.</li>
 -- </ul>
 -- @author Tuomas Jormola
--- @copyright © 2010 Tuomas Jormola <a href="mailto:tj@solitudo.net">tj@solitudo.net</a> <a href="http://solitudo.net">http://solitudo.net</a>
+-- @copyright © 2011 Tuomas Jormola <a href="mailto:tj@solitudo.net">tj@solitudo.net</a> <a href="http://solitudo.net">http://solitudo.net</a>
 --  Licensed under the terms of
 -- the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License Version 2.0</a>.
 --
