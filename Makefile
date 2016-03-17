@@ -1,10 +1,10 @@
 # Generate README.txt file and API documentation
 
-MDWN_FILES		= README.mdwn
-LUA_MAIN_MODULE	= $(LUA_SRC_DIR)/luadoc/doclet/ikiwiki.lua
-SUBMODULES		= $(PWD)/submodules
-MDWN2TEXT_MK	= $(SUBMODULES)/mdwn2text/mdwn2text.mk
-LUADOC_MK		= luadoc.mk
+MDWN_FILES      = README.mdwn
+LUA_MAIN_MODULE = $(LUA_SRC_DIR)/luadoc/doclet/ikiwiki.lua
+SUBMODULES      = $(PWD)/submodules
+MDWN2TEXT_MK    = $(SUBMODULES)/mdwn2text/mdwn2text.mk
+LUADOC_MK       = luadoc.mk
 
 all: update-readme update-luadoc
 

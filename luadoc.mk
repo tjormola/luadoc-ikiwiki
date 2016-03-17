@@ -28,12 +28,12 @@
 # update-luadoc: $(LUA_API_DIR)/html/index.html $(LUA_API_DIR)/ikiwiki/index.mdwn
 #
 # $(LUA_API_DIR)/html/index.html: $(LUA_MAIN_MODULE)
-#	$(MAKE) luadoc-clean-html
-#	$(MAKE) luadoc-html
+# 	$(MAKE) luadoc-clean-html
+# 	$(MAKE) luadoc-html
 
 # $(LUA_API_DIR)/ikiwiki/index.mdwn: $(LUA_MAIN_MODULE)
-#	$(MAKE) luadoc-clean-ikiwiki
-#	$(MAKE) luadoc-ikiwiki
+# 	$(MAKE) luadoc-clean-ikiwiki
+# 	$(MAKE) luadoc-ikiwiki
 #
 # See below for the variable definitions.
 #
@@ -44,17 +44,17 @@
 #
 
 # The luadoc command
-LUADOC				?= luadoc
+LUADOC         ?= luadoc
 
 # Directory where luadoc writes API documentation files. Under this directory
 # directories 'html' and 'ikiwiki' are created which contains API documentation
 # in these formats.
-LUA_APIDOC_DIR		?= $(PWD)/api
+LUA_APIDOC_DIR ?= $(PWD)/api
 
 # Directory under which to search for the Lua source files
-LUA_SRC_DIR			?= src
+LUA_SRC_DIR    ?= src
 
-LUA_SRC_FILES		?= $(shell cd $(LUA_SRC_DIR) && find . -name '*.lua' | cut -d/ -f2-)
+LUA_SRC_FILES  ?= $(shell cd $(LUA_SRC_DIR) && find . -name '*.lua' | cut -d/ -f2-)
 
 luadoc: luadoc-html luadoc-ikiwiki
 
